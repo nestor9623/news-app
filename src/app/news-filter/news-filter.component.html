@@ -1,0 +1,7 @@
+<div class="container_principal">
+  <div [ngClass]="item.active ? 'elemento active' : 'elemento'" *ngFor="let item of optionsShow" (click)="changeOption(item)">
+    <span>
+      {{ item?.name }}
+    </span>
+  </div>
+</div>

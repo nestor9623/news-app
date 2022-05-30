@@ -1,0 +1,17 @@
+<div class="container-principal">
+  <ng-container *ngFor="let article of articles">
+    <div class="card-custom" *ngIf="article?.description ||article?.content">
+      <div class="header">{{article.author === null || article.author === undefined ? 'Naf-News' : article.author }}</div>
+      <div class="body">
+        <div class="image">
+          <img class="card-img-top" [src]="article.urlToImage" onerror="this.src='../../assets/news-icon.png'" alt="img-notice">
+        </div>
+        <div class="description">
+          <a [href]="article.url" target="_blank">{{article.description === null || article.description === undefined ? article.content : article.description}}</a>
+        </div>
+      </div>
+      <div class="footer">{{article.publishedAt | date: 'dd-MM-yyyy'}}</div>
+    </div>
+  </ng-container>
+</div>
+

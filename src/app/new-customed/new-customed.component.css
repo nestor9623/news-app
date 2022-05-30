@@ -1,0 +1,24 @@
+.container_principal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  -webkit-box-shadow: 5px 5px 15px 5px #00000026;
+  box-shadow: 5px 5px 15px 5px #00000026;
+  max-width: 90%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #f8f9fa;
+}
+.container_principal .info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  height: 430px;
+  justify-content: space-between;
+}
+.container_principal .info .body {
+  font-size: 18px;
+}

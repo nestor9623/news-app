@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">NAF-NEWS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="d-flex" role="search">
+        <!-- (ngModelChange)="searchNews($event)" -->
+        <input class="form-control me-2" type="text" placeholder="Enter text to search" aria-label="Search" name="name" ngModel [value]="textToSearch" (ngModelChange)="setValueInput($event)"
+          >
+        <button class="btn btn-outline-dark" type="submit" (click)="searchNews($event)">Search</button>
+      </form>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <select class="form-select" aria-label="Default select example" [(ngModel)]="countryChoise"
+            (ngModelChange)="changeCountry($event)">
+            <ng-container *ngFor="let country of countries">
+              <option [value]="country.id"><a class="dropdown-item" href="#">{{country.name}}</a></option>
+            </ng-container>
+          </select>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<h1 style="text-align: center;">NAF NEWS</h1>
+<!-- Banner de la noticia princial llega en la posicion cero -->
+<app-new-customed [article]="firstArticle"></app-new-customed>
+<!-- Filtros y ordenacion -->
+<app-news-filter [optionsShow]="categories" (optionSelected)="changeCategory($event)"></app-news-filter>
+<!-- Muestra todas las noticias en base a los articulos pasados -->
+<app-topheadline [articles]="articles"></app-topheadline>
+<router-outlet></router-outlet>

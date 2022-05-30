@@ -1,0 +1,24 @@
+.container_principal {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+.container_principal .elemento {
+  display: flex;
+  font-size: 15px;
+  font-weight: 500;
+  width: 150px;
+  justify-content: center;
+}
+.container_principal .elemento.active {
+  border-bottom: 1px solid red;
+}
+.container_principal .elemento:hover {
+  cursor: pointer;
+  border-bottom: 1px solid red;
+}
+.container_principal .elemento span {
+  text-transform: capitalize;
+}
